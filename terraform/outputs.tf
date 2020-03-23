@@ -13,3 +13,7 @@ output "f5_ui" {
 output "consul_ui" {
   value = "http://${aws_instance.consul.public_ip}:8500"
 }
+
+output "ssh_key" {
+  value = "${tls_private_key.demo.private_key_pem}"
+}
