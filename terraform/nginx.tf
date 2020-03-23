@@ -38,6 +38,16 @@ resource "aws_autoscaling_group" "nginx" {
       value               = "consul"
       propagate_at_launch = true
     },
+    {
+      key                 = "ttl"
+      value               = var.ttl
+      propagate_at_launch = true
+    },
+    {
+      key                 = "owner"
+      value               = var.owner
+      propagate_at_launch = true
+    },
   ]
 
 }

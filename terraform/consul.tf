@@ -8,7 +8,9 @@ resource "aws_instance" "consul" {
   iam_instance_profile   = "${aws_iam_instance_profile.consul.name}"
   key_name               = "${aws_key_pair.demo.key_name}"
   tags = {
-    Name = "${var.prefix}-consul"
-    Env  = "consul"
+    Name  = "${var.prefix}-consul"
+    Env   = "consul"
+    ttl   = var.ttl
+    owner = var.owner
   }
 }
